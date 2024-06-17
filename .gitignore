@@ -1,0 +1,72 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore swap files
+*.swp
+
+# Ignore temporary files
+*.*~
+
+# Ignore lock file
+project.lock.json
+
+# Ignore macOS specific file
+.DS_Store
+
+# Ignore Python compiled files
+*.pyc
+
+# Visual Studio Code
+.vscode/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio 2015/2017/2019/2022
+.vs/
+
+# Rider
+.idea/
+
+# .NET Core specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Npm package logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
