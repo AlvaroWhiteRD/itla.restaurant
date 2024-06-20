@@ -1,10 +1,10 @@
-﻿namespace Resturant.Domain.Entities;
+﻿using Resturant.Domain.Core;
 
-public class NumeroCorrelativo
+namespace Resturant.Domain.Entities;
+
+public class NumeroCorrelativo : BaseEntity
 {
-    public int Id { get; set; }
     public int? UltimoNumero { get; set; }
     public int? CantidadDigitos { get; set; }
     public string Gestion { get; set; }
-    public DateTime? FechaActualizacion { get; set; }
 }

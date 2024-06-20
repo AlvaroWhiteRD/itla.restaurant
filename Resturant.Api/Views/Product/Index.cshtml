@@ -1,0 +1,86 @@
+﻿@{
+}
+@model List<Resturant.Domain.Entities.Producto>;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante El Camaron - Productos</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-center">Restaurante El Camaron</h1>
+            <a class="btn btn-success mb-3" href="/product/New">Nuevo Producto</a>
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @TempData["Message"]
+                </div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @TempData["Error"]
+                </div>
+            }
+            <div class="row">
+
+                <div class="col-sm-8 offset-sm-2">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Descripcion</th>
+                                <th>Qr</th>
+                                <th>Stock</th>
+                                <th>Imagen</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Descripcion</td>
+                                    <td>@item.Qr</td>
+                                    <td>@item.Stock</td>
+                                    <td>
+                                        <img height="50" width="50" src="@item.UrlImagen" />
+                                    </td>
+
+                                    <td>@item.Precio</td>
+                                    <td>
+                                        <a asp-controller="Product"
+                                           asp-action="Edit"
+                                           asp-route-id="@item.Id"
+                                           class="btn btn-warning mb-3">Editar</a>
+                                    </td>
+                                    <td>
+                                        <a asp-controller="Product"
+                                           asp-action="Delete"
+                                           onclick="return delecteConfirm()"
+                                           asp-route-id="@item.Id"
+                                           class="btn btn-danger mb-3">Eliminar</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts {
+        <script>
+            function delecteConfirm() {
+                return confirm("Estas seguro de eliminar el item?");
+            }
+        </script>
+    }
+</body>
+</html>

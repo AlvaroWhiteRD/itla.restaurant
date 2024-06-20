@@ -2,17 +2,16 @@
 
 using Microsoft.EntityFrameworkCore;
 using Resturant.Domain.Entities;
-using System.Reflection;
 
-public class RestaurantContext : DbContext
+public class RestaurantContext2 : DbContext
 {
     public DbSet<Producto> Productos { get; set; }
 
-    public RestaurantContext()
+    public RestaurantContext2()
     {
     }
 
-    public RestaurantContext(DbContextOptions contextOptions) : base(contextOptions)
+    public RestaurantContext2(DbContextOptions contextOptions) : base(contextOptions)
     {
 
     }
@@ -29,7 +28,7 @@ public class RestaurantContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        string database = "Restaurant.db";
+      /*  string database = "Restaurant.db";
        // optionsBuilder.UseSqlite(connectionString: "Filename=" + database)
         optionsBuilder.UseSqlite(connectionString: "Filename=" + database,
             sqliteOptionsAction: op =>
@@ -37,7 +36,7 @@ public class RestaurantContext : DbContext
                 op.MigrationsAssembly(
                     Assembly.GetExecutingAssembly().FullName
                     );
-            });
+            });*/
         base.OnConfiguring(optionsBuilder);
     }
 }

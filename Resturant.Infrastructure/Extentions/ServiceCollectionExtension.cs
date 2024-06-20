@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
+using Resturant.Infrastructure.Context;
 using Resturant.Infrastructure.Data;
 using System.Reflection;
 namespace Resturant.Infrastructure.Extentions;
@@ -10,7 +10,7 @@ public static class ServiceCollectionExtension
 {
     public static IServiceCollection AddDbContexts(this IServiceCollection services, IConfiguration configuration)
     {
-        string database = "School.db";
+        string database = "Resturant.db";
 
         services.AddDbContext<RestaurantContext>(options =>
             options.UseSqlite(connectionString: "Filename=" + database,

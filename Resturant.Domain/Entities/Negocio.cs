@@ -1,8 +1,9 @@
-﻿namespace Resturant.Domain.Entities;
+﻿using Resturant.Domain.Core;
 
-public class Negocio
+namespace Resturant.Domain.Entities;
+
+public class Negocio : BaseEntity
 {
-    public int Id { get; set; }
     public string UrlLogo { get; set; }
     public string NombreLogo { get; set; }
     public string NumeroDocumento { get; set; }
@@ -12,11 +13,4 @@ public class Negocio
     public string Telefono { get; set; }
     public decimal? PorcentajeImpuesto { get; set; }
     public string SimboloMoneda { get; set; }
-    public DateTime FechaRegistro { get; set; }
-    public int IdUsuarioCreacion { get; set; }
-    public DateTime? FechaMod { get; set; }
-    public int? IdUsuarioMod { get; set; }
-    public int? IdUsuarioElimino { get; set; }
-    public DateTime? FechaElimino { get; set; }
-    public bool Eliminado { get; set; }
 }

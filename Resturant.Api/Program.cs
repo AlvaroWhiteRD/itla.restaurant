@@ -1,28 +1,30 @@
-using Microsoft.EntityFrameworkCore;
-using Resturant.Infrastructure.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Resturant.Domain.Services.Productos;
+
+using Resturant.Infrastructure.Context;
+using Resturant.Api.Routers;
+using Resturant.Api.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
+
 builder.Services.AddServerSideBlazor();
 
-builder.Services.AddDbContext<RestaurantContext>(options => options.UseSqlite(connectionString: "Filename=Restaurant.db"));
+//builder.Services.AddDbContext<RestaurantContext>(options => options.UseSqlite(connectionString: "Filename=Restaurant.db"));
+
+builder.Services.AddDbContext<RestaurantContext>(options =>
+{
+    options.UseInMemoryDatabase("RestaurantDB");
+});
+
+RepositoryRegistrations.RegisterRepositories(builder.Services);
+builder.Services.AddScoped<ProductServices>();
+
+builder.Services.AddControllersWithViews()
+    .AddRazorRuntimeCompilation();
 
 var app = builder.Build();
 
-
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    try
-    {
-        var context = services.GetRequiredService<RestaurantContext>();
-        context.Database.Migrate();
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine(ex.Message);
-    }
-}
 
 if (!app.Environment.IsDevelopment())
 {
@@ -37,5 +39,7 @@ app.UseRouting();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+
+RouteConfig.ConfigureRoutes(app);
 
 app.Run();

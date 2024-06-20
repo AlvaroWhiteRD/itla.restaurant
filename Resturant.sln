@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resturant.Domain", "Resturant.Domain\Resturant.Domain.csproj", "{94F6AB89-7E98-4DC7-83A1-77300662C0C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resturant.Domain", "Resturant.Domain\Resturant.Domain.csproj", "{94F6AB89-7E98-4DC7-83A1-77300662C0C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resturant.Infrastructure", "Resturant.Infrastructure\Resturant.Infrastructure.csproj", "{A96C1E41-62A2-4566-85F9-7BA1AC559D95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resturant.Infrastructure", "Resturant.Infrastructure\Resturant.Infrastructure.csproj", "{A96C1E41-62A2-4566-85F9-7BA1AC559D95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resturant.Api", "Resturant.Api\Resturant.Api.csproj", "{C03E83B7-E2F0-454B-916D-0DB5D4B87B77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resturant.Api", "Resturant.Api\Resturant.Api.csproj", "{C03E83B7-E2F0-454B-916D-0DB5D4B87B77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resturant.Test", "Resturant.Test\Resturant.Test.csproj", "{FCA6BCEE-D0C3-49D0-9525-85670BE5EEBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C03E83B7-E2F0-454B-916D-0DB5D4B87B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C03E83B7-E2F0-454B-916D-0DB5D4B87B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C03E83B7-E2F0-454B-916D-0DB5D4B87B77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCA6BCEE-D0C3-49D0-9525-85670BE5EEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA6BCEE-D0C3-49D0-9525-85670BE5EEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA6BCEE-D0C3-49D0-9525-85670BE5EEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA6BCEE-D0C3-49D0-9525-85670BE5EEBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

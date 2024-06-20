@@ -1,8 +1,9 @@
-﻿namespace Resturant.Domain.Entities;
+﻿using Resturant.Domain.Core;
 
-public class Usuario
+namespace Resturant.Domain.Entities;
+
+public class Usuario : BaseEntity
 {
-    public int Id { get; set; }
     public string Nombre { get; set; }
     public string Correo { get; set; }
     public string Telefono { get; set; }
@@ -10,12 +11,4 @@ public class Usuario
     public string UrlFoto { get; set; }
     public string NombreFoto { get; set; }
     public string Clave { get; set; }
-    public bool? EsActivo { get; set; }
-    public DateTime FechaRegistro { get; set; }
-    public int IdUsuarioCreacion { get; set; }
-    public DateTime? FechaMod { get; set; }
-    public int? IdUsuarioMod { get; set; }
-    public int? IdUsuarioElimino { get; set; }
-    public DateTime? FechaElimino { get; set; }
-    public bool Eliminado { get; set; }
 }

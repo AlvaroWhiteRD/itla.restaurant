@@ -1,10 +1,11 @@
-﻿namespace Resturant.Domain.Entities;
+﻿using Resturant.Domain.Core;
 
-public class DetalleVenta
+namespace Resturant.Domain.Entities;
+
+public class DetalleVenta : BaseEntity
 {
-    public int Id { get; set; }
-    public int? IdVenta { get; set; }
-    public int? IdProducto { get; set; }
+    public int? VentaId { get; set; }
+    public int? ProductoId { get; set; }
     public string MarcaProducto { get; set; }
     public string DescripcionProducto { get; set; }
     public string CategoriaProducto { get; set; }

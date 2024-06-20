@@ -1,8 +1,9 @@
-﻿namespace Resturant.Domain.Entities;
+﻿using Resturant.Domain.Core;
 
-public class Venta
+namespace Resturant.Domain.Entities;
+
+public class Venta : BaseEntity
 {
-    public int Id { get; set; }
     public string NumeroVenta { get; set; }
     public int? IdTipoDocumentoVenta { get; set; }
     public int? IdUsuario { get; set; }
@@ -11,6 +12,4 @@ public class Venta
     public decimal SubTotal { get; set; }
     public decimal ImpuestoTotal { get; set; }
     public decimal Total { get; set; }
-    public DateTime FechaRegistro { get; set; }
-
 }
